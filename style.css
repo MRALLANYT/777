@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(120deg, #181c22 0%, #232a34 100%);
+    color: #f5f5f5;
+    padding: 20px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 32px;
+    color: #00ffea;
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 20px 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.7s ease forwards;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.card:hover {
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,255,234,0.10), 0 2px 8px rgba(0,0,0,0.18);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.img {
+    height: 70%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 12px rgba(0,255,234,0.08);
+}
+
+.titulo {
+    font-size: 1.25rem;
+    margin: 10px 0 6px;
+    color: #ffcc00;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.especie,
+.genero {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    margin-bottom: 4px;
+    
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .container {
+        gap: 24px;
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .container {
+        gap: 20px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .img {
+        min-height: 100px;
+    }
+
+    .titulo {
+        font-size: 1.1rem;
+    }
+
+    .especie, .genero {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .card {
+        padding: 14px 10px;
+        border-radius: 14px;
+    }
+
+    .img {
+        height: 70%;
+        width: 100%;
+    }
+
+    .titulo {
+        font-size: 1rem;
+    }
+
+    .especie, .genero {
+        font-size: 0.8rem;
+    }
+
+    body {
+        padding: 10px;
+    }
+}
